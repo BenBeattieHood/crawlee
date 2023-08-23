@@ -850,7 +850,7 @@ export class BasicCrawler<Context extends CrawlingContext = BasicCrawlingContext
     }
 
     async getRequestQueue() {
-        this.requestQueue ??= await RequestQueue.open();
+        this.requestQueue ??= await RequestQueue.open(null, { config: this.config });
 
         return this.requestQueue!;
     }
